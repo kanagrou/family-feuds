@@ -8,6 +8,7 @@ const app = express();
 const server = app.listen(PORT, () => console.log("Listening on port", PORT));
 
 // Settings
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Middlewares
