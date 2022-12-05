@@ -10,10 +10,12 @@ const server = app.listen(PORT, () => console.log("Listening on port", PORT));
 // Settings
 app.set("view engine", "ejs");
 
-// Routes middleware
+// Middlewares
+app.use(express.static(__dirname + "/public/"));
+
+// Routes
 app.use("/play", play);
 
 app.get("/", (req, res) => {
     res.send("Hello!");
-
 });
