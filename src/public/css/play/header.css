@@ -2,6 +2,7 @@ header {
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 100%;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -20,6 +21,8 @@ header {
     border: 2px solid rgba(255, 217, 0, 0.514);
 
     box-shadow: -2px 3px 10px 0px rgba(0,0,0,0.4);
+
+    transition: 175ms transform ease-in-out;
 }
 
 .team-card__name {
@@ -40,4 +43,5 @@ header {
 
 .team-card.active {
     box-shadow: -5px 5px 15px 5px rgba(0,0,0,0.4);
+    transform: scale(1.1);
 }
