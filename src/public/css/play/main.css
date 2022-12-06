@@ -1,0 +1,44 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    --darker-blue: #192a9c;
+    --dark-blue: #2235b4;
+    --light-blue: #1A36DC;
+    --dark-orange: #F07610;
+    --light-orange: #FE7C09;
+    --accent: #f3e417;
+    
+    --accent-gradient: linear-gradient(to top right, rgb(196, 160, 0), rgb(255, 208, 0), rgb(255, 246, 193));
+
+    background-image: linear-gradient(to top right, rgb(31, 38, 102), var(--dark-blue));
+    color: white;
+}
+
+.page-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+}
+
+.answers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.answers-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    max-height: 250px;
+    width: 510px;
+    background-image: var(--darker-blue);
+    border: 5px solid var(--accent);
+    border-radius: 5px;
+    box-shadow: -5px 5px 15px 0 rgba(160, 128, 14, 0.4),
+                inset 0 0 15px 10px rgba(0,0,0,.5);
+}

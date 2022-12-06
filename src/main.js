@@ -8,6 +8,8 @@ const PORT = 3000;
 const app = express();
 const server = app.listen(PORT, () => console.log("Listening on port", PORT));
 
+const wss = require("./wss.js")(server);
+
 // Settings
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

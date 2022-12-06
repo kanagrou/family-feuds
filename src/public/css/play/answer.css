@@ -1,0 +1,85 @@
+@keyframes reveal-anim {
+    from {
+        transform: rotateX(180deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+@keyframes reveal-child-anim {
+    0% {
+        visibility: hidden;
+    }
+    30% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.answer-card:not(.revealed) {
+    height: 50px;
+    width: 250px;
+    
+    background-color: var(--dark-blue);
+    background-image: rad-gradient(to bottom right, var(--darker-blue), var(--dark-blue), var(--light-blue));
+    border: 3px solid whitesmoke;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+
+    box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.274);
+    transform: rotateX(180deg);
+}
+.answer-card:not(.revealed) .answer-card__answer {
+    display: none;
+}
+.answer-card:not(.revealed) .answer-card__value {
+    display: none;
+}
+.answer-card{
+    display: flex;
+    height: 50px;
+    width: 250px;
+    align-items: center;
+    text-align: center;
+        
+    background-color: var(--dark-blue);
+    border: 3px solid white;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.4);
+}
+
+.answer-card.revealed {
+    animation-name: reveal-anim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.answer-card__answer {
+    display: block;
+    flex-grow: 3;
+    animation-name: reveal-child-anim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.answer-card__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-blue);
+    border: 3px solid var(--darker-blue);
+    width: 44px;
+    height: 44px;
+    box-shadow: inset 0 0 6px 3px rgba(255, 255, 255, 0.274);
+
+    animation-name: reveal-child-anim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
