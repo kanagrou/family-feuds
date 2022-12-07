@@ -15,27 +15,27 @@
 <body>
     <div class="page-wrapper">
         <header>
-            <div class="team-card">
-                <span class="team-card__name"><%=game.teams[0].name%></span>
-                <span class="team-card__score"><%=game.teams[0].score%></span>
+            <div class="team-card <%=game.getActiveTeam() == 0 ? "active" : ""%>">
+                <span class="team-card__name"><%=game.getTeamName(0)%></span>
+                <span class="team-card__score"><%=game.getTeamScore(0)%></span>
             </div>
-            <div class="question-title-container"><h1 id="question-title"><%=game.question.name%></h1></div>
-            <div class="team-card">
-                <span class="team-card__name"><%=game.teams[1].name%></span>
-                <span class="team-card__score"><%=game.teams[0].score%></span>
+            <div class="question-title-container"><span id="question-title"><%=game.getCurrentQuestion().name%></span></div>
+            <div class="team-card <%=game.getActiveTeam() == 1 ? "active" : ""%>">
+                <span class="team-card__name"><%=game.getTeamName(1)%></span>
+                <span class="team-card__score"><%=game.getTeamScore(1)%></span>
             </div>
         </header>
 
         <main>
             <div class="answers-container">
                 <ul class="answers-list">
-                    <%for (let i = 0; i<game.question.answers.length; i++ ) {%>
-                        <li class="answer-card">
-                            <span class="answer-card__answer"><%=game.question.answers[i].name%></span>
-                            <span class="answer-card__value"><%=game.question.answers[i].value%></span>
+                    <%for (let i = 0; i<game.getCurrentQuestion().answers.length; i++ ) {%>
+                        <li class="answer-card <%=game.getCurrentQuestion().answers[i].revealed ? "revealed" : ""%>">
+                            <span class="answer-card__answer"><%=game.getCurrentQuestion().answers[i].name%></span>
+                            <span class="answer-card__value"><%=game.getCurrentQuestion().answers[i].value%></span>
                         </li>
                     <%}%>
-                    <%for (let i = 0; i<8-game.question.answers.length; i++ ) {%>
+                    <%for (let i = 0; i<8-game.getCurrentQuestion().answers.length; i++ ) {%>
                         <li class="answer-card locked">
                             <span class="answer-card__answer">None</span>
                             <span class="answer-card__value">0</span>

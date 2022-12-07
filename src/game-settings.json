@@ -1,66 +1,66 @@
 {
     "game": {
       "teams": [
-          {"name": "equipe 1", "score": 0},
-          {"name": "equipe 2", "score": 0}
+          "Equipe 1",
+          "Equipe 2"
        ],
       "questions": [
           {"name": "Que retrouvons nous le plus dans le local de m Comtois?", "answers": [
-            {"name":"des bonbons", "value": 105},
-            {"name":"des élèves", "value": 28},
-            {"name":"des posters et des cartes", "value": 20},
-            {"name":"des bureaux", "value": 19},
-            {"name":"yvon", "value": 9},
-            {"name":"des cheveux", "value": 8},
-            {"name":"divan", "value": 4}
+            {"name":"des bonbons", "value": 105, "revealed": false},
+            {"name":"des élèves", "value": 28, "revealed": false},
+            {"name":"des posters et des cartes", "value": 20, "revealed": false},
+            {"name":"des bureaux", "value": 19, "revealed": false},
+            {"name":"yvon", "value": 9, "revealed": false},
+            {"name":"des cheveux", "value": 8, "revealed": false},
+            {"name":"divan", "value": 4, "revealed": false}
           ]},
           {"name": "quelle est votre matiere préférer?", "answers": [
-            {"name": "concentration", "value": 77},
-            {"name": "éduc", "value": 61},
-            {"name": "math", "value": 50},
-            {"name": "art et musique", "value": 40},
-            {"name": "français", "value": 21},
-            {"name": "éthique", "value": 20},
-            {"name": "science", "value": 20}
+            {"name": "concentration", "value": 77, "revealed": false},
+            {"name": "éduc", "value": 61, "revealed": false},
+            {"name": "math", "value": 50, "revealed": false},
+            {"name": "art et musique", "value": 40, "revealed": false},
+            {"name": "français", "value": 21, "revealed": false},
+            {"name": "éthique", "value": 20, "revealed": false},
+            {"name": "science", "value": 20, "revealed": false}
           ]},
           {"name": "Que retrouvons nous le plus dans une étui à crayons?", "answers": [
-            {"name": "crayon", "value": 189},
-            {"name": "matériel scolaire", "value": 104},
-            {"name": "cellulaire", "value": 13},
-            {"name": "bonbon", "value": 5},
-            {"name": "vape", "value": 4},
-            {"name": "papier pour tricher", "value": 3},
-            {"name": "condom", "value": 3}
+            {"name": "crayon", "value": 189, "revealed": false},
+            {"name": "matériel scolaire", "value": 104, "revealed": false},
+            {"name": "cellulaire", "value": 13, "revealed": false},
+            {"name": "bonbon", "value": 5, "revealed": false},
+            {"name": "vape", "value": 4, "revealed": false},
+            {"name": "papier pour tricher", "value": 3, "revealed": false},
+            {"name": "condom", "value": 3, "revealed": false}
        ]},
        {"name": "Quelle est le moyens de transport le plus utiliser par les élèves?", "answers": [
-        {"name": "bus", "value": 249},
-        {"name": "voiture", "value": 35},
-        {"name": "marche", "value": 31},
-        {"name": "avion", "value": 6},
-        {"name": "hélicoptère", "value": 3},
-        {"name": "vélo", "value": 3},
-        {"name": "scooter", "value": 3}
+        {"name": "bus", "value": 249, "revealed": false},
+        {"name": "voiture", "value": 35, "revealed": false},
+        {"name": "marche", "value": 31, "revealed": false},
+        {"name": "avion", "value": 6, "revealed": false},
+        {"name": "hélicoptère", "value": 3, "revealed": false},
+        {"name": "vélo", "value": 3, "revealed": false},
+        {"name": "scooter", "value": 3, "revealed": false}
       ]},
       {"name": "que font les éleves de la ranger du fond?", "answers": [
-        {"name": "ils travaillent/écoute le cours", "value": 43},
-        {"name": "ils parlent", "value": 41},
-        {"name": "rien", "value": 35},
-        {"name": "niaiser", "value": 31},
-        {"name": "manger", "value": 30},
-        {"name": "gamer", "value": 30},
-        {"name": "cellulaire", "value": 28}
+        {"name": "ils travaillent/écoute le cours", "value": 43, "revealed": false},
+        {"name": "ils parlent", "value": 41, "revealed": false},
+        {"name": "rien", "value": 35, "revealed": false},
+        {"name": "niaiser", "value": 31, "revealed": false},
+        {"name": "manger", "value": 30, "revealed": false},
+        {"name": "gamer", "value": 30, "revealed": false},
+        {"name": "cellulaire", "value": 28, "revealed": false}
       ]},
       {"name": "que retrouvons nous le plus dans le bureau des surveillant d'éleves?", "answers": [
-        {"name": "surveillants", "value": 34},
-        {"name": "objets perdus/confisqué", "value": 33},
-        {"name": "ordinateur", "value": 26},
-        {"name": "élèves", "value": 16},
-        {"name": "les gars de hockey", "value": 11}
+        {"name": "surveillants", "value": 34, "revealed": false},
+        {"name": "objets perdus/confisqué", "value": 33, "revealed": false},
+        {"name": "ordinateur", "value": 26, "revealed": false},
+        {"name": "élèves", "value": 16, "revealed": false},
+        {"name": "les gars de hockey", "value": 11, "revealed": false}
       ]},
       {"name": "Repas préférer cafétaria", "answers": [
-        {"name": "pizza", "value": 66},
-        {"name": "panini", "value": 20},
-        {"name": "lasagne", "value": 18}
+        {"name": "pizza", "value": 66, "revealed": false},
+        {"name": "panini", "value": 20, "revealed": false},
+        {"name": "lasagne", "value": 18, "revealed": false}
       ]}
     ]}
   }
