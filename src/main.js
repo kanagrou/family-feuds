@@ -1,8 +1,8 @@
+// import * as express from "express";
 const express = require("express");
 const path = require("path");
+
 const fs = require("fs");
-
-
 
 const PORT = 3000;
 const app = express();
@@ -89,11 +89,11 @@ const game = new Game(gameSettings.teams, gameSettings.questions);
 // Routes
 const play = require("./routes/play.js")(game);
 app.use("/play", play);
+app.use("/admin", admin_route);
 
 app.get("/", (req, res) => {
     res.send("Hello!");
 });
-
 
 setTimeout(() => game.revealAnswer(2),5000);
 setTimeout(() => game.nextQuestion(),10000);
