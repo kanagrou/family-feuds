@@ -6,7 +6,7 @@ const path = require("path");
 const play = require("./routes/play.js");
 const admin_route = require("./routes/admin.js");
 
-const PORT = 4000;
+const PORT = 3000;
 const app = express();
 const server = app.listen(PORT, () => console.log("Listening on port", PORT));
 
