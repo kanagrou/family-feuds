@@ -1,0 +1,42 @@
+
+.content{
+    color: white;
+}
+
+.answer {
+    border: 1px solid orange;
+    border-radius: 5px;
+    line-height: 2;
+    
+}
+.center{
+    text-align: center;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    margin-right: 5px;
+}
+
+#change{
+    background-color: orange;
+    color: white;
+    font-size: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.reveal{
+    margin-right: 20px;
+    background-color: orange;
+    color: white;
+}
+
+body {
+    height: 100%;
+    background-attachment: fixed;
+    word-wrap: break-word;
+    background-image: linear-gradient(darkblue, purple);
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+}
