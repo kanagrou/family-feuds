@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-
-router.get("/", (req, res) => {
-    res.send("Play!");
-});
-
-module.exports = router;
+module.exports = function(game) {
+    router.get("/", (req, res) => {
+        res.render("play", {game});
+    });
+    
+    return router;
+}
