@@ -8,6 +8,14 @@ header {
     flex-wrap: wrap;
 }
 
+#question-title {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 50vw;
+    text-align: center;
+}
+
 .team-card {
     display: flex;
     flex-direction: column;

@@ -6,7 +6,7 @@ const ws = new WebSocket("wss://" + location.hostname);
         case t = 'sync':
             d: None
         case t = 'set_answer_visibility':
-            d: { ans_id: int, visible: bool}
+            d: { answer_id: int, visible: bool}
         case t = 'set_team_score':
             d: { team_id: int, value: int}
         case t = 'set_question':
@@ -33,7 +33,7 @@ ws.onmessage = (data) => {
 
     switch (MessageType) {
         case MessageTypes.SetAnswerVisibility:
-            setAnswerVisibility(MessageData.ans_id, MessageData.visible)
+            setAnswerVisibility(MessageData.answer_id, MessageData.visible)
             break;
         case MessageTypes.SetTeamScore:
             setTeamScore(MessageData.team_id, MessageData.value);
@@ -75,9 +75,12 @@ function setQuestion(question) {
     for (let i=0;i<8;i++) {
         const answer = answers_list.children[i];
         answer.classList.remove("revealed");
+
         if (question.answers[i]) {
             answer.querySelector(".answer-card__answer").textContent = question.answers[i].name;
-            answer.querySelector(".answer-card__value").textContent = question.answers[i].value;  
+            answer.querySelector(".answer-card__value").textContent = question.answers[i].value;
+            if (question.answers[i].revealed)
+                answer.classList.add("revealed");
             answer.classList.remove("locked");
         } else {
             answer.querySelector(".answer-card__answer").textContent = "None";
