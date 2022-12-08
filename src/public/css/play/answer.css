@@ -65,6 +65,7 @@
 .answer-card__answer {
     display: block;
     flex-grow: 3;
+    width:200px;
     animation-name: reveal-child-anim;
     animation-duration: 2s;
     animation-fill-mode: forwards;
