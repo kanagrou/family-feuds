@@ -16,6 +16,8 @@ app.set("view engine", "ejs");
 
 // Middlewares
 app.use(express.static(__dirname + "/public/"));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // Game
 class Game {
@@ -38,7 +40,7 @@ class Game {
     }
 
     prevQuestion() {
-        if (this.currentQuestion + 1 > 0) {
+        if (this.currentQuestion > 0) {
             this.currentQuestion--;
             wss.sendAll(wss.MessageTypes.SetQuestion, {question: this.getCurrentQuestion()});
         }
@@ -88,6 +90,7 @@ const game = new Game(gameSettings.teams, gameSettings.questions);
 
 // Routes
 const play = require("./routes/play.js")(game);
+const admin_route = require('./routes/admin.js')(game);
 app.use("/play", play);
 app.use("/admin", admin_route);
 
