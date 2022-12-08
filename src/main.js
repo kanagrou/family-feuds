@@ -4,7 +4,7 @@ const path = require("path");
 
 const fs = require("fs");
 
-const PORT = 8443;
+const PORT = 3000;
 const app = express();
 const server = app.listen(PORT, () => console.log("Listening on port", PORT));
 
