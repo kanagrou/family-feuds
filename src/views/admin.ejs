@@ -5,21 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guerre des clans - Control Panel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/panel/main.css">
 </head>
 <body>
-    <div class="content">
-    <h1 class="center">Control Panel</h1>
-    <h2>Current Question: </h2>
-    <h3>Answers:</h3>
-    <ol>
-        <li class="answer"><button class="reveal">(reveal)</button>alllowwwwwwwwwwwwwwwwwwwwwwwwwwwww</li>
-        <li class="answer"><button class="reveal">(reveal)</button>allo2</li> 
-    </ol>
-    <button id="change">prev</button> <button class="right" id="change">next</button>   
+    <div class="page-wrapper">
+        <header>
+            <h3><%=game.getCurrentQuestion().name%></h3>
+            <div class="team-card-container">
+                <div class="team-card <%=game.getActiveTeam() == 0 ? "active" : "" %>" name="set-active-team"><span><%=game.getTeamName(0)%></span></div>
+                <div class="team-card <%=game.getActiveTeam() == 1 ? "active" : "" %>" name="set-active-team"><span><%=game.getTeamName(1)%></span></div>
+                <div class="team-card <%=game.getActiveTeam() != 0 && game.getActiveTeam() != 1  ? "active" : "" %>" name="set-active-team"><span>Deselect</span></div>
+            </div>
+        </header>
+        <main>
+            <h3>Answers</h3>
+            <div>
+                <ol class="answers-list">
+                    <%game.getCurrentQuestion().answers.forEach((answer) => {%>
+                        <li name="toggle-answer" class="answer-card <%=answer.revealed ? "visible" : ""%>" data-visible="<%=answer.revealed ? "true" : "false"%>">
+                            <span class="answer-card__answer"><%=answer.name%></span>
+                            <span class="answer-card__value"><%=answer.value%></span>
+                        </li>
+                    <% }); %>
+                </ol>
+            </div>
+        </main>
+        <footer class="question-selection-buttons-container">
+            <div class="question-selection-button" id="prev-question-button">PREV</div>
+            <div class="question-selection-button" id="next-question-button">NEXT</div>
+        </footer>
     </div>
+    
+
+    <script src="./js/admin/app.js" type="text/javascript"></script>
 </body>
 </html>

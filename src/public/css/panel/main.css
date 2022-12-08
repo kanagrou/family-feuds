@@ -1,42 +1,105 @@
+:root {
+    font-family: Roboto, 'sans-serif';
 
-.content{
-    color: white;
+    --accent: rgb(51, 173, 230);
 }
 
-.answer {
-    border: 1px solid orange;
-    border-radius: 5px;
-    line-height: 2;
-    
+
+body {
+    background-color: rgb(20,20,20);
+    color: whitesmoke;
+    margin: 0;
 }
-.center{
+
+h3 {
     text-align: center;
 }
 
-.right{
-    position: absolute;
-    right: 0px;
-    margin-right: 5px;
+.page-wrapper {
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+    height: 100vh;
 }
 
-#change{
-    background-color: orange;
-    color: white;
-    font-size: 100%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.team-card-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.reveal{
-    margin-right: 20px;
-    background-color: orange;
-    color: white;
+.team-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+
+    background-color: var(--accent);
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 7px 1px rgba(0,0,0,.5);
+
+    font-weight: 500;
+    cursor: pointer;
+}
+.team-card:not(.active) {
+    opacity: .6;
+}
+.question-selection-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-body {
-    height: 100%;
-    background-attachment: fixed;
-    word-wrap: break-word;
-    background-image: linear-gradient(darkblue, purple);
-    font-family: 'Roboto', sans-serif;
-    background-repeat: no-repeat;
+.question-selection-button {
+    padding: 10px 15px;
+    background-color: var(--accent);
+
+    border-radius: 5px;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.5);
+    cursor: pointer;
+
+    height:fit-content;
+
+    font-weight: 500;
 }
+
+.question-selection-button:hover {
+    opacity: .9;
+}
+
+.answers-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px;
+    padding: 0;
+
+    list-style-type: none;
+
+    gap: 20px;
+}
+
+.answer-card {
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+
+    cursor: pointer;
+    background-color: rgb(25,25,25);
+    padding: 10px 10px;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+}
+.answer-card:not(.visible) {
+    opacity: .5;
+}
+
+.answer-card__value {
+    color: var(--accent);
+}
+
