@@ -31,6 +31,7 @@ module.exports = function(game) {
     });
 
     router.post("/", (req, res) => {
+        console.log(req.body)
         const messageType = req.body.t;
         const messageData = req.body.d;
 

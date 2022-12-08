@@ -19,6 +19,7 @@ app.use(express.static(__dirname + "/public/"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+
 // Game
 class Game {
     teams;
@@ -61,8 +62,8 @@ class Game {
         return this.teams[team_id].score;
     }
     setTeamScore(team_id, value) {
-        this.teams[team_id].score = score;
-        wss.sendAll(wss.MessageTypes.SetTeamScore, {value});
+        this.teams[team_id].score = value;
+        wss.sendAll(wss.MessageTypes.SetTeamScore, {team_id, value});
     }
 
     getActiveTeam() {
@@ -74,11 +75,23 @@ class Game {
     }
 
     revealAnswer(answer_id) {
-        this.getCurrentQuestion().answers[answer_id].revealed = true;
+        let answer = this.getCurrentQuestion().answers[answer_id]
+        const hasChanged = !answer.revealed;
+        answer.revealed = true;
+
+        if (this.getActiveTeam() == 0 || this.getActiveTeam() == 1 && hasChanged) {
+            this.setTeamScore(this.getActiveTeam(), this.getTeamScore(this.getActiveTeam()) + this.getCurrentQuestion().answers[answer_id].value);
+        }
+
         wss.sendAll(wss.MessageTypes.SetAnswerVisibility, {answer_id, visible: true});
     }
     hideAnswer(answer_id) {
-        this.getCurrentQuestion().answers[answer_id].revealed = false;
+        let answer = this.getCurrentQuestion().answers[answer_id]
+        const hasChanged = answer.revealed;
+        answer.revealed = false;
+        if (this.getActiveTeam() == 0 || this.getActiveTeam() == 1 && hasChanged) {
+            this.setTeamScore(this.getActiveTeam(), this.getTeamScore(this.getActiveTeam()) - this.getCurrentQuestion().answers[answer_id].value);
+        }
         wss.sendAll(wss.MessageTypes.SetAnswerVisibility, {answer_id, visible: false});
     }
 
