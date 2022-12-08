@@ -111,11 +111,3 @@ app.use("/admin", admin_route);
 app.get("/", (req, res) => {
     res.send("Hello!");
 });
-
-setTimeout(() => game.revealAnswer(2),5000);
-setTimeout(() => game.nextQuestion(),10000);
-setTimeout(() => game.setActiveTeam(0), 12500);
-setTimeout(() => game.revealAnswer(1), 15000);
-setTimeout(() => game.setActiveTeam(1), 17500);
-setTimeout(() => game.prevQuestion(), 20000);
-setTimeout(() => game.setActiveTeam(-1), 22500);
