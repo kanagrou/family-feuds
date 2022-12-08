@@ -89,9 +89,10 @@ const gameSettings = JSON.parse(fs.readFileSync(path.join(__dirname + "/game-set
 const game = new Game(gameSettings.teams, gameSettings.questions);
 
 // Routes
-const play = require("./routes/play.js")(game);
-const admin_route = require('./routes/admin.js')(game);
-app.use("/play", play);
+
+const play_route = require("./routes/play.js")(game);
+const admin_route = require("./routes/admin.js")(game);
+app.use("/play", play_route);
 app.use("/admin", admin_route);
 
 app.get("/", (req, res) => {
