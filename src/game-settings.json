@@ -14,7 +14,7 @@
           {"name":"des cheveux", "value": 8, "revealed": false},
           {"name":"divan", "value": 4, "revealed": false}
         ]},
-        {"name": "quelle est votre matière préférée?", "answers": [
+        {"name": "Quelle est votre matière préférée?", "answers": [
           {"name": "concentration", "value": 77, "revealed": false},
           {"name": "éduc", "value": 61, "revealed": false},
           {"name": "math", "value": 50, "revealed": false},
